@@ -27,10 +27,6 @@ interface Props {
 const Home: NextPage<Props> = (props) => {
   const { song, isPlaying, link } = props;
  
-
-  const router = useRouter();
-
-
   return (
     <>
       <MetaData />
