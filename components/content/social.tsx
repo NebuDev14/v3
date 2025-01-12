@@ -16,14 +16,14 @@ const socials = [
   {
     alt: "email",
     img: <IoMdMail className="text-5xl md:text-3xl" />,
-    link: "mailto:hi@wyun.dev",
+    link: "mailto:wyun@wpi.edu",
     color: "text-cyan-600",
   },
 ];
 
 export const Social: React.FC = () => {
   return (
-    <div className="z-50 flex flex-col">
+    <div className="z-50 flex flex-col ">
       <div className="flex flex-row items-center justify-start mb-4">
         {socials.map((icon, i) => (
           <div

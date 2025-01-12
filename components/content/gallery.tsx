@@ -1,4 +1,4 @@
-export const Gallary: React.FC = () => {
+export const Gallery: React.FC = () => {
   return (
     <>
       <div className="grid grid-cols-2 gap-4 px-20 md:grid-cols-1 md:px-4">

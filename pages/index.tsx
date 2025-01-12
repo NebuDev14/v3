@@ -14,7 +14,7 @@ import { StarsBackground } from "../components/ui/stars-background";
 import { ShootingStars } from "../components/ui/shooting-stars";
 import { FlipWords } from "../components/ui/flip-words";
 import { LayoutGrid } from "../components/ui/image-grid";
-import { Gallary } from "../components/content/gallary";
+import { Gallery } from "../components/content/gallery";
 import SpotifyWebApi from "spotify-web-api-node";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ interface Props {
 
 const Home: NextPage<Props> = (props) => {
   const { song, isPlaying, link } = props;
- 
+
   return (
     <>
       <MetaData />
@@ -42,37 +42,36 @@ const Home: NextPage<Props> = (props) => {
           maxDelay={3000}
         />
         <StarsBackground starDensity={0.001} twinkleProbability={0.6} />
-        <div className="grid grid-cols-2 px-8 md:grid-cols-1 border-b-[1px] border-b-neutral-800">
-          <div className="z-10 flex items-center justify-center h-screen md:flex-col">
+        <div className="flex px-8 md:grid-cols-1 border-b-[1px] border-b-neutral-800">
+          <div className="z-10 flex justify-center items-center h-screen md:flex-col">
             <div className="pl-20 md:pl-0 md:w-full">
-              <Social />
+         
               <div className="inline-flex font-semibold text-8xl md:text-3xl font-open">
-                <span className="mr-5 text-left md:mr-3">I&apos;m</span>
                 <span className="mr-5 text-pink-600 md:mr-3 ">Warren</span>
                 <span className="text-cyan-400">Yun.</span>
               </div>
-              <h1 className="inline-block m-0 text-4xl md:text-lg text-zinc-500 font-bricolage ">
+              <div className="inline-block m-0 text-4xl md:text-lg text-zinc-300 font-bricolage pr-80">
                 I&apos;m
                 <span>
                   <FlipWords
                     duration={4500}
                     words={[
-                      "an avid maker",
+                      "a maker",
                       "a hackathon addict",
-                      "a sleep-deprived engineer",
+                      "an engineer",
                       "a software developer",
-                      "a Redbull enthusiast",
+                      "a redbull enthusiast",
                     ]}
                   />
                 </span>
-                from New York City doing{" "}
+                from NYC doing{" "}
                 <span className="hover:text-yellow-600">robotics</span>,{" "}
                 <span className="hover:text-purple-500">
                   full-stack development
                 </span>
                 , and{" "}
                 <span className="hover:text-cyan-700">embedded security</span>.
-              </h1>
+              </div>
               <div className="flex flex-row items-center justify-start mt-3 font-bricolage text-zinc-400 md:text-sm md:flex-col md:items-start">
                 <FaSpotify
                   size={30}
@@ -120,6 +119,28 @@ const Home: NextPage<Props> = (props) => {
         </div>
       </div>
 
+      <div className="flex py-20 px-20 md:grid-cols-1 md:px-4">
+        <div className="flex flex-col items-center">
+          <div className="w-[500px] h-[670px] relative rounded-xl">
+            <Image src="/warren.jpg" alt="Warren Yun" layout="fill" objectFit="contain" className="rounded-xl" />
+          </div>
+          <h1 className="font-bricolage mt-2">MLH Hackcon 2024!</h1>
+        </div>
+        <div className=" ml-12 w-2/3 flex flex-col">
+          <span className=" text-5xl font-open mb-4 font-semibold text-yellow-500">ABOUT ME</span>
+          <p className="text-zinc-200 font-bricolage text-2xl mb-auto">
+            Hi! I&apos;m Warren. I&apos;m currently an undergraduate studying Computer Science and Robotics Engineering at WPI.
+            <br /> <br />
+            My interests lie in the intersection of optimization, control theory, and machine learning. My goal is to create loco-manipulative robots that can operate in unique environments while still maintaing efficiency and style in their movements.
+            <br /> <br />
+            I also love hackathons! I&apos;ve been competing in them since freshman year of high school, and I go to them quite frequently nowadays.
+            <br /> <br />
+            If you&apos;re interested in collaborating with me on something, please reach out to me at  <span className="ml-2 font-mono">wyun [at] wpi [dot] edu</span>
+          </p>
+          <Social />
+        </div>
+      </div>
+
       <div className="flex items-center justify-center py-32 text-3xl md:py-16 md:text-lg text-zinc-400 font-bricolage">
         <div className="w-1/5 border border-yellow-600 md:w-1/12 " />
         <h1 className="mx-20 md:mx-4">
@@ -128,12 +149,12 @@ const Home: NextPage<Props> = (props) => {
         <div className="w-1/5 border border-yellow-600 md:w-1/12" />
       </div>
 
-      <Gallary />
+      <Gallery />
 
       <div className="flex items-center justify-center py-32 text-3xl md:py-16 md:text-lg text-zinc-400 font-bricolage">
         <div className="w-1/5 border border-pink-700 md:w-1/12 " />
         <h1 className="mx-20 md:mx-4">
-          <i>buildin&apos; things is sometimes fun.</i>
+          <i>buildin&apos; things is fun.</i>
         </h1>
         <div className="w-1/5 border border-pink-700 md:w-1/12" />
       </div>
